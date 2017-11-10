@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
 import { mount } from 'enzyme';
 import Order from './Order';
@@ -9,7 +12,10 @@ describe('Order', () => {
   let handleSubmit;
 
   beforeEach(() => {
+    //document.addEventListener("DOMContentLoaded", ready);
+
     handleSubmit = jest.fn();
+
     component = mount(<Order handleSubmit={handleSubmit} />);
   });
 
@@ -37,7 +43,7 @@ describe('Order', () => {
     Мы не хотим отправлять форму, если какое либо из полей пустое.
     Для этого, мы должны добавить валидацию и отпраправлять форму, только когда оба поля заполнены
 
-    Нужно добавить валидацию полей в Order.js. Пока будете валидация только на предмет не пустого значения.
+    Нужно добавить валидацию полей в Order.js. Пока будет валидация только на предмет не пустого значения.
     Но, нужна такая реализация, которую можно будет потом расширить к примеру - валидацию дат, валидация типа введенных данных.
      */
     it('Заполняем только поле title и отправляем', () => {
