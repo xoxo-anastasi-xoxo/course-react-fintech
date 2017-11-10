@@ -12,8 +12,6 @@ describe('Order', () => {
   let handleSubmit;
 
   beforeEach(() => {
-    //document.addEventListener("DOMContentLoaded", ready);
-
     handleSubmit = jest.fn();
 
     component = mount(<Order handleSubmit={handleSubmit} />);
