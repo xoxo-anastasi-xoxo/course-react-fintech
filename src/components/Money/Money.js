@@ -6,7 +6,9 @@ export default ({value, currency}) => {
   const string = value.toString();
   const pointPosition = string.indexOf('.');
 
-  return <span>{pointPosition === -1 ? <span>{string}</span> :
-    <span>{string.slice(0, pointPosition)}</span>}{pointPosition !== -1 &&
-  <span>,{string.slice(pointPosition + 1)}</span>}{currency && <span>{currencySymbols[currency]}</span>}</span>;
+  return <span>
+    {pointPosition === -1 ? <span>{string}</span> : <span>{string.slice(0, pointPosition)}</span>}
+    {pointPosition !== -1 && <span>,{string.slice(pointPosition + 1)}</span>}
+    {currency && <span>{currencySymbols[currency]}</span>}
+    </span>;
 }
