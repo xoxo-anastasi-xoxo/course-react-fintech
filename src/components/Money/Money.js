@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 export default ({value, currency}) => {
   const currencySymbols = {RUB: '₽', EUR: '€', GBP: '£', USD: '$'};
   const string = value.toString();
