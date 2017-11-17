@@ -14,8 +14,10 @@ describe('TimelineList', () => {
   describe('Передаем базовый рендеринг', () => {
     it('Проверяем рендеринг 2 TimelineItem', () => {
       const component = shallow(<TimelineList items={mockData} />);
-
       expect(component.find(TimelineItem).length).toBe(2);
+
+      // expect(component.html()).toEqual('<button>Кнопка</button>');
+
     });
 
     it('Передаем корректные props в TimelineItem', () => {

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Sidebar from '../components/Sidebar/Sidebar';
 import Home from '../pages/Home';
@@ -36,7 +36,7 @@ class App extends Component {
       let items = snapshot.val();
 
       this.setState({
-        operations: {...this.state.operations, ...items}
+        operations: { ...this.state.operations, ...items }
       });
     });
   }
@@ -47,15 +47,15 @@ class App extends Component {
         <div className="App">
           <div className='App__layout'>
             <div className='App_sidebar'>
-              <Sidebar/>
+              <Sidebar />
             </div>
             <div className='App__content'>
-              <Route exact path='/' component={Home}/>
+              <Route exact path='/' component={Home} />
               <Route
                 path='/account/:accountId'
                 component={() => <Account operations={this.state.operations} onSubmit={this.handleSubmit}/>}
               />
-              <Route path='/create-account' component={CreateAccount}/>
+              <Route path='/create-account' component={CreateAccount} />
             </div>
           </div>
         </div>

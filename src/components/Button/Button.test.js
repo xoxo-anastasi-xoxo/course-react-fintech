@@ -14,14 +14,14 @@ describe('Button', () => {
   describe('Базовый рендеринг', () => {
     it('Кнопка с текстом', () => {
       const component = shallow(<Button>Кнопка</Button>);
-
-      expect(component.html()).toEqual('<button>Кнопка</button>');
+      // Ну раз мы добавили класс, то скорее всего просто забыли исправить тесты:)
+      expect(component.html()).toEqual('<button class="Button">Кнопка</button>');
     });
 
     it('Кнопка с текстом и типов', () => {
       const component = shallow(<Button type='submit'>Кнопка</Button>);
 
-      expect(component.html()).toEqual('<button type="submit">Кнопка</button>');
+      expect(component.html()).toEqual('<button class="Button" type="submit">Кнопка</button>');
     });
   });
 
