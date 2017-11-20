@@ -8,7 +8,10 @@ import {
 import './Sidebar.css';
 
 export default ({accounts}) => {
-  let accountsKeys = Object.keys(accounts);
+  let accountsKeys = [];
+  if (accounts) {
+    accountsKeys = Object.keys(accounts);
+  }
 
   return (
     <div className='Sidebar'>
@@ -16,7 +19,7 @@ export default ({accounts}) => {
         Счета
       </div>
 
-      <NavLink to='/account/321321' className='Link' activeClassName='Link--active'>
+      <NavLink to='/account/:accountId' className='Link' activeClassName='Link--active'>
         <div className='Sidebar__account'>
           <div className='Sidebar__account-name'>
             Основной

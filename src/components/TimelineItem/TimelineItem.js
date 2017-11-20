@@ -3,7 +3,7 @@ import Money from '../Money/Money';
 
 import './TimelineItem.css';
 
-export default ({ title, price, category, account, type }) => (
+export default ({ title, price, category, account }) => (
   <div className='TimelineItem'>
     <div className='TimelineItem__operations'>
       <div className='TimelineItem__operations-account'>
@@ -19,7 +19,7 @@ export default ({ title, price, category, account, type }) => (
         <Money value={price} />
       </div>
       <div className='TimelineItem__total-category'>
-        {type}
+        {category}
       </div>
     </div>
     <div>

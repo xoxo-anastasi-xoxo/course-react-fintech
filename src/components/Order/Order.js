@@ -15,8 +15,7 @@ export default class Order extends React.Component {
       account: props.account,
       title: '',
       category: '',
-      amount: '',
-      type: ''
+      amount: ''
     };
   }
 
@@ -24,8 +23,7 @@ export default class Order extends React.Component {
     this.setState({
       title: '',
       category: '',
-      amount: '',
-      type: ''
+      amount: ''
     });
   }
 
@@ -74,10 +72,6 @@ export default class Order extends React.Component {
 
         <FormField label='Цена' name='amount'>
           <FormText value={this.state.amount} name='amount' onChange={this.handleInputChange} />
-        </FormField>
-
-        <FormField label='Тип' name='type_'>
-          <FormText value={this.state.type} name='type' onChange={this.handleInputChange} />
         </FormField>
         <br />
         <Button type='submit'>Отправить</Button>

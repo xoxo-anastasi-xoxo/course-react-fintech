@@ -25,8 +25,6 @@ describe('Sidebar', () => {
       component = mount(<MemoryRouter><Sidebar accounts={accounts} /></MemoryRouter>);
     });
 
-
-
     it('Проверяем присутсвие account c индексом 1', () => {
       expect(component.find('div[children="Кредитка"]').length).toBe(1);
     });
