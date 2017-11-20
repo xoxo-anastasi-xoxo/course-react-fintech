@@ -31,8 +31,6 @@ class App extends Component {
   }
 
   createAccount(newAccount) {
-    console.log("++");
-
     let newObject = {
       ...this.state.accounts
     };
