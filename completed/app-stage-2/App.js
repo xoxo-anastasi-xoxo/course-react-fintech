@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Sidebar from '../components/Sidebar/Sidebar';
 import Home from '../pages/Home';
-import About from '../pages/About';
 import Account from '../pages/Account';
 import CreateAccount from '../pages/CreateAccount';
 
@@ -15,10 +14,7 @@ import {
 
 import './App.css';
 
-
-
 class App extends Component {
-  index = 1;
   constructor() {
     super();
 
@@ -26,20 +22,8 @@ class App extends Component {
       accounts: {},
       user: {},
       operations: {}
-    };
-    this.createAccount = this.createAccount.bind(this)
+    }
   }
-
-  createAccount(newAccount) {
-    let newObject = {
-      ...this.state.accounts
-    };
-    newObject[this.index] = newAccount;
-    this.setState({
-      accounts: newObject
-    });
-    this.index++;
-  };
 
   handleSubmit = (order) => {
     database.ref('operations').push(order);
@@ -52,7 +36,7 @@ class App extends Component {
       let items = snapshot.val();
 
       this.setState({
-        operations: {...this.state.operations, ...items}
+        operations: { ...this.state.operations, ...items }
       });
     });
   }
@@ -63,17 +47,15 @@ class App extends Component {
         <div className="App">
           <div className='App__layout'>
             <div className='App_sidebar'>
-              <Sidebar/>
+              <Sidebar />
             </div>
             <div className='App__content'>
-              <Route exact path='/' component={Home}/>
-              <Route exact path='/about' component={About}/>
+              <Route exact path='/' component={Home} />
               <Route
                 path='/account/:accountId'
                 component={() => <Account operations={this.state.operations} onSubmit={this.handleSubmit}/>}
               />
-              <Route path='/create-account'
-                     component={() => <CreateAccount createAccount={this.createAccount}/>}/>
+              <Route path='/create-account' component={CreateAccount} />
             </div>
           </div>
         </div>
